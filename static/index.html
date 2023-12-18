@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizardtopia - Wizards of Jadavpur University United</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .navbars{
+        border: 2px solid purple;
+        margin:2px;
+        background-color: rgb(51, 68, 68);
+        display:flex;
+        flex-direction: row;
+        position:sticky;
+        top:0px;
+        width:99.8%;
+        z-index: 1;
+    }
+
+    .navbars>ul{
+        display: flex;
+        flex-direction: row;
+    }
+    .navbars>ul>li{
+        list-style: none;
+    }
+    .navbars>ul>li>a{
+        padding:4px;
+        background-color: aquamarine;
+        border:2px solid blue;
+        border-radius: 4px;
+        margin:4px;
+        position: relative;
+        top: 12px;
+        left: 12px;
+        text-decoration: none;
+    }
+    .navbars>ul>li>a:hover{
+        background-color: black;
+        color:white;
+    }
+    .dropclass{
+        background-color: aquamarine;
+        border:2px solid blue;
+        border-radius: 4px;
+        position: relative;
+        top: 12px;
+        left: 12px;
+        text-decoration: none;
+    }
+
+    .header{
+        /* border: 2px solid blue; */
+        text-align: center;
+        font-size: 40px;
+        font-family:'Courier New', Courier, monospace;
+        animation-name: header;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+    @keyframes header{
+        from{
+            color:rgba(148, 35, 234, 0.605);
+        }
+        to{
+            color:rgb(91, 225, 149);
+        }
+    }
+
+    .houses{
+        animation: house 1s ease-in-out 0s 1 normal forwards;
+        display:flex;
+        flex-direction: row;
+        /* border: 2px solid red; */
+        justify-content: center;
+        align-items: center;
+    }
+    @keyframes house {
+        from{
+            transform: scale(0);
+        }
+        to{
+            transform: scale(1);
+        }
+    }
+
+    .teachers{
+        /* border: 2px solid green; */
+        margin-top: 23px;
+        display:flex;
+        flex-direction: column;
+        animation: teacher 1s ease-in-out 0s 1 normal forwards;
+    }
+    @keyframes teacher {
+        from{
+            transform: scale(0);
+        }
+        to{
+            transform: scale(1);
+        }
+    }
+
+    .footer{
+        /* border: 2px solid black; */
+        margin-top: 310px;
+    }
+
+    .house_name{
+        border:2px solid blue;
+        margin:12px;
+        height:320px;
+        width:300px;
+        padding:12px;
+        border-radius: 10px;
+        box-sizing: border-box;
+    }
+
+    .headmaster, .profs, .headboys{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #headmaster, #assistant, #t1, #t2, #t3, #t4, #h1, #h2{
+        border: 2px solid green;
+        width:500px;
+        height:350px;
+        border-radius: 12px;
+        margin:20px;
+        padding:4px;
+    }
+    
+    
+    body::before{
+        background: url('/static/Images/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
+        content: '';
+        background-repeat: no-repeat;
+        position:absolute;
+        top:0px;
+        left:0px;
+        bottom:0px;
+        width:100%;
+        height:670%;
+        opacity:0.5;
+        z-index: -1;
+    }
+
+    .message{
+        border:2px solid green;
+        height:300px;
+        width:65%;
+        margin:12px auto;
+        padding:6px;
+        border-radius: 12px;
+    }
+    .events{
+        border:2px solid green;
+        height:400px;
+        width:65%;
+        margin:12px auto;
+        padding:6px;
+        border-radius: 12px;
+        overflow: scroll;
+    }
+    
+    @media only screen and (max-width: 1200px){
+        .houses{
+            display: grid;
+            grid-template-columns: 40% 40%;
+            margin: 8px;
+        }
+        .house_name{
+            width:300px;
+            height:320px;
+        }
+        .footer{
+            /* border: 2px solid black; */
+            margin-top: 34px;
+        }
+        .events{
+        border:2px solid green;
+        height:400px;
+        width:65%;
+        margin:12px auto;
+        padding:6px;
+        border-radius: 12px;
+        overflow: scroll;
+    }
+        body::before{
+            background: url('/static/Images/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
+            content: '';
+            background-repeat: no-repeat;
+            position:absolute;
+            top:0px;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            height:680%;
+            opacity:0.5;
+            z-index: -1;
+        }
+        header{
+            /* border: 2px solid blue; */
+            text-align: center;
+            font-size: 35px;
+        font-family:'Courier New', Courier, monospace;
+    }
+        
+    }
+
+    @media only screen and (max-width: 830px){
+        .house_name{
+            width:200px;
+            height:230px;
+        }
+        body::before{
+            background: url('/static/Images/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
+            content: '';
+            background-repeat: no-repeat;
+            position:absolute;
+            top:0px;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            height:695%;
+            opacity:0.5;
+            z-index: -1;
+        }
+        .events{
+            border:2px solid green;
+            height:400px;
+            width:65%;
+            margin:12px auto;
+            padding:6px;
+            border-radius: 12px;
+            overflow: scroll;
+        }
+    }
+
+    @media only screen and (max-width: 700px){
+        .headmaster, .profs, .headboys{
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            width: 10px;
+            margin: 6px auto;
+        }
+        body::before{
+            background: url('/static/Images/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
+            content: '';
+            background-repeat: no-repeat;
+            position:absolute;
+            top:0px;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            height:700%;
+            opacity:0.5;
+            z-index: -1;
+        }
+        .events{
+        border:2px solid green;
+        height:400px;
+        width:65%;
+        margin:12px auto;
+        padding:6px;
+        border-radius: 12px;
+        overflow: scroll;
+    }
+        
+    }
+    @media only screen and (max-width:650px){
+        .navbars{
+            height:fit-content;
+            position: static;
+        }
+        .navbars>ul{
+            display:flex;
+            flex-direction: column;
+            
+        }
+        .navbars>ul>li{
+            margin:6px;
+            padding:3px;
+            text-decoration: none;
+        }
+        .navbars>ul>li>a {
+            position: relative;
+            top:2px;
+            left: 24px;
+        }
+        .houses{
+            display: flex;
+            flex-direction: column;
+            margin: 8px;
+        }
+        .house_name{
+            width: 300px;
+            height:310px;
+        }
+        .events{
+            border:2px solid green;
+            height:400px;
+            width:65%;
+            margin:12px auto;
+            padding:6px;
+            border-radius: 12px;
+            overflow: scroll;
+        }
+        #headmaster, #assistant, #t1, #t2, #t3, #t4, #h1, #h2{
+            width:300px;
+            height:300px;
+        }
+        body::before{
+            background: url('/static/Images/telas-harry-potter-hogwarts-school-i110908.jpg') no-repeat center center/cover;
+            content: '';
+            background-repeat: no-repeat;
+            position:absolute;
+            top:0px;
+            left:0px;
+            bottom:0px;
+            width:100%;
+            height:790%;
+            opacity:0.5;
+            z-index: -1;
+        }
+    }
+</style>
+<body>
+    <div class="navbars">
+        <div class="logo">
+            <a href="/static/Houses/Wizardtopia.html"><img src="/static/Images/download (1).png" alt="" height="30px" width="50px"></a>
+            <p style="color: white">Wizardtopia</p>
+        </div>
+        <ul id="menu">
+            <li><a href="/static/index.html">Home</a></li>
+            <li><a href="/static/Houses/Rules.html">Rules And Regulations</a></li>
+            <li><a href="/static/form.html">Register Your Name</a></li>
+            <li class="nav-item dropdown">
+                <a class="dropdown-toggle dropclass" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Matirials
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/static/book/books.html">Books</a></li>
+                  <li><a class="dropdown-item" href="#">Movies</a></li>
+                  <li><a class="dropdown-item" href="#">Disabled</a></li>
+                </ul>
+              </li>
+              <li><a href="/static/Houses/Events.html">Events</a></li>
+        </ul>
+    </div>
+    <div class="header">
+        <h1><b>Welcome to Wizardtopia</b></h1>
+    </div>
+    <div class="houses">
+        <div class="gryffindor house_name">
+            <a href="../static/Houses/Gryffindor.html"><img src="/static/Images/download.png" class="object-fit-cover border rounded" alt="..."></a>
+            <p style="font-weight: bold">Gryffindor</p>
+        </div>
+        <div class="huffelpuff house_name">
+            <a href="../static/Houses/Huffelpuff.html"><img src="/static/Images/download (2).jpg" class="object-fit-cover border rounded" alt="..."></a>
+            <p style="font-weight: bold">Hufflepuff</p>
+        </div>
+        <div class="ravenclaw house_name">
+            <a href="../static/Houses/Ravenclaw.html"><img src="/static/Images/download.jpg" class="object-fit-cover border rounded" alt="..."></a>
+            <p style="font-weight: bold">Ravenclaw</p>
+        </div>
+        <div class="slytherin house_name">
+            <a href="../static/Houses/Slytherin.html"><img src="/static/Images/download (1).jpg" class="object-fit-cover border rounded" alt="..."></a>
+            <p style="font-weight: bold">Slytherin</p>
+        </div>
+    </div>
+    <div class="message">
+        <h2 style="text-align: center;">Message</h2>
+    </div>
+    <div class="events" style="overflow:scroll;">
+        <h2 style="text-align: center;">Events</h2>
+        <p>Date: 19.11.2023</p>
+        <img src="../static/Images/download copy.jpg" alt="" height="170px" width="170px">
+        <p>Wizardtopia wishes Team India a very best of luck</p>
+        <p>May Team India wins the World Cup once again after 12 years.</p>
+        <p>Date: 19.11.2023</p>
+        <p>The first test for the Wizardtopia students will start during the last week of December.</p> 
+        <p>Keep studying</p>
+    </div>
+    <div class="teachers">
+        <div class="headmaster">
+            <div class="first">
+                <h2>Headmaster and Assistant Headmistress</h2>
+            </div>
+            <div class="second">
+                <div id="headmaster">
+                    <p>Headmaster: Professor Anirban Sarkar</p>
+                </div>
+                <div id="assistant">
+                    <p>Assistant: Professor Shramana Mondal</p>
+                </div>
+            </div>
+        </div>
+        <div class="profs">
+            <div class="first">
+                <h2>Teachers</h2>
+            </div>
+            <div class="second">
+                <div id="t1">
+                    <p>Gryffindor House Head: Professor Farshid Hossain</p>
+                </div>
+                <div id="t2">
+                    <p>Ravenclaw House Head: Professor Shramana Mondal</p>
+                </div>
+                <div id="t3">
+                    <p>Hufflepuff House Head: Professor Sreejan Bose</p>
+                </div>
+                <div id="t4">
+                    <p>Slytherin House Head: Professor Ullash Biswas</p>
+                </div>
+            </div>
+        </div>
+        <div class="headboys">
+            <div class="first">
+                <h2>HeadBoy and HeadGirl</h2>
+            </div>
+            <div class="second">
+                <div id="h1">
+                    <p>HeadBoy - From the Ravenclaw House: Ishandeep Dey </p>
+                </div>
+                <div id="h2">
+                    <p>HeadGirl - : Undecided</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>copyright: Wizards_of_jadavpur_united:</p>
+        <p>Hogwarts_School_Of_Witchcraft_And_Wizardy:Official_Extension</p>
+        <p style="color:aqua;">Created by: Md. Farshid Hossain </p>       
+        <p>Approved by: Anirban Sarkar, Headmaster of Wizardtopia</p>
+    </div>
+    <script>
+        function hide(){
+            let menu = document.getElementById('menu');
+            document.getElementById('buton');
+            if(menu.style.display == hide){
+                menu.style.display = block;
+            }
+            else{
+                menu.style.display = hide;
+            }
+        }
+        
+        
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

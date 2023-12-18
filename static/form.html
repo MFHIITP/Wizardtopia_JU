@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form of Entry to Wizardtopia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    .forms{
+        margin-left:10%;
+        margin-top:5%;
+    }
+    .input{
+        display:flex;
+        flex-direction: row;
+        border:2px solid blue;
+        border-radius: 6px;
+        margin:12px;
+        padding:12px;
+        width:18%;
+        height:20px;
+    }
+
+    .btn{
+        color:black;
+        background-color: white;
+        cursor:pointer;
+        border:2px solid blue;
+        border-radius: 4px;
+        margin:10px 6px;
+        padding:2px;
+        width:100px;
+    }
+    .btn:hover{
+        color:white;
+        background-color: black;
+    }
+    body::before{
+        background: url('../static/Images/Dhogwarts.webp') no-repeat center center/cover;
+        height:100%;
+        width:100%;
+        content: "";
+        position:absolute;
+        left:0px;
+        top:0px;
+        z-index: -1;
+        animation: back 10s linear infinite;
+    }
+    @keyframes back {
+        from{
+            background-position: top;
+        }
+        to{
+            background-position: bottom;
+        }
+    }
+    h1, p{
+        margin-left:20px;
+        color:white;
+        font-size:50px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    input::placeholder{
+        color:black;
+        font-weight:bold;
+    }
+    @media only screen and (max-width: 600px){
+        h1, p{
+            margin-left: 20px;
+        }
+        .input{
+            width:230px;
+        }
+        .form{
+            position: relative;
+            top:100px;
+            left:0px;
+        }
+        body::before{
+        background: url('../static/Images/Dhogwarts.webp') no-repeat center center/cover;
+        height:110%;
+        width:100%;
+        content: "";
+        position:absolute;
+        left:0px;
+        top:0px;
+        z-index: -1;
+        animation: back 10s linear infinite;
+    }
+    @keyframes back {
+        from{
+            background-position: top;
+        }
+        to{
+            background-position: bottom;
+        }
+    }
+    }
+    .contain{
+        display:flex;
+        flex-direction: column;
+    }
+    h4, label{
+        color:white;
+    }
+    .btn1{
+        color:rgb(251, 21, 21);
+        background-color: blue;
+    }
+    #confirm:hover{
+        cursor:pointer;
+    }
+    .input{
+        height:40px;
+        width:300px;
+    }
+
+</style>
+<body>
+    <h1>Enter your Details</h1>
+    <p style="font-size: larger; margin-top: 23px;">To new students, Welcome and to our existing students, Welcome Back</p>
+    <div class="contain">
+    <div class="forms">
+        <form action="../backend_main.js" method="POST" class="mainform">
+            <p style="font-size: large;">* marked contents are mandatory to fill</p>
+            <input type="text" name="name" id="name" class="input" placeholder="Enter your name *" required>
+            <input type="text" name="year" id="year" class="input" placeholder="Enter your year of study *" required>
+            <input type="text" name="branch" id="branch" class="input" placeholder="Enter your department">
+            <input type="number" name="phone" id="phone" class="input" placeholder="Enter your mobile number *" required>
+            <input type="email" name="email" id="email" class="input" placeholder="Enter your emailID *" required>
+            <input type="text" name="study" id="study" class="input" placeholder="Enter the name of your university *" required>
+            <button type="reset" class="btn">Reset</button>
+            <button type="submit" class="btn main" onclick="alerting()">Submit </button>
+        </form>
+    </div>
+
+    <div class="container">
+        <h4>Manage Your Account</h4>
+        <form action="../backend1.js" method="post" class="form2">
+            <label for="email">Enter your email id*</label>
+            <input type="email" name="email" id="emailid" required>
+            <input type="checkbox" name="confirm" id="confirm" required>
+            <button type="submit" class="btn btn1" onclick="alerting1()"> Delete Your Account </button>
+            <button type="submit" class="btn btn1" formaction="../backend_view.js"> View Your Account </button>
+        </form>
+    </div>
+    </div>
+    <script>
+        function alerting(){
+            confirm("Do you want to submit the form?");
+        }
+        function alerting1(){
+            confirm("Do you want to delete your account?");
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
