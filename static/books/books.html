@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+</head>
+<style>
+    body{
+       background-image: url("../Images/images.jpg");
+       background-size: 100%; 
+       background-repeat: no-repeat;
+    }
+    .container{
+        display:flex;
+        flex-direction: column;
+        background-color: white;
+        opacity:0.5;
+        width:400px;
+    }
+    .container a{
+        margin:7px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: larger;
+    }
+    .container a:hover{
+        color: rgb(9, 47, 47);
+    }
+    @media only screen and (max-width: 1000px){
+        body{
+            background-image: url("../Images/images.jpg");
+            background-size: 150%; 
+            background-repeat: no-repeat;
+    }
+    }
+</style>
+<body>
+    <div class="container">
+        <a href="/static/book/Harry Potter - Book 1 - The Sorcerers Stone.pdf" target="_blank">Harry Potter and The Sorcerer's Stone</a>
+        <a href="/static/book/Harry Potter - Book 2 - The Chamber of Secrets.pdf" target="_blank">Harry Potter and The Chamber of Secrets</a>
+        <a href="/static/book/Harry Potter - Book 3 - The Prisoner of Azkaban.pdf" target="_blank">Harry Potter and The Prisoner of Azkaban</a>
+        <a href="/static/book/Harry Potter - Book 4 - The Goblet of Fire.pdf" target="_blank">Harry Potter and The Goblet of Fire</a>
+        <a href="/static/book/Harry Potter - Book 5 - The Order of the Phoenix.pdf" target="_blank">Harry Potter and The Order of the Phoenix</a>
+        <a href="/static/book/Harry Potter - Book 6 - The Half-Blood Prince.pdf" target="_blank">Harry Potter and The Half-Blood Prince</a>
+        <a href="/static/book/Harry Potter - Book 7 - The Deathly Hallows.pdf" target="_blank">Harry Potter and The Deathly Hallows</a>
+        <a href="/static/book/Harry Potter - Book 8 - The Cursed Child.pdf" target="_blank">Harry Potter and The Cursed Child</a>
+        <a href="/static/book/Harry Potter - CookBook [Unofficial].pdf" target="_blank">Harry Potter CookBook </a>
+        <a href="/static/book/The Sorcerer's Companion.pdf" target="_blank">The Sorcerer's Companion</a>
+        <a href="/static/book/The World of Harry Potter.pdf" target="_blank">The World Of Harry Potter</a>
+    </div>
+</body>
+</html>
