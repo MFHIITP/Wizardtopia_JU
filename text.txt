@@ -1,0 +1,101 @@
+/* async function out(){
+    const data = await Collection1.find({email: 'hossainfarshid1@gmail.com'});
+    // for(let i=0; i<data.length; i++){
+    //     console.log(data[i].email);
+    // }
+    // console.log(data[0].email);
+    try{
+        var p = await data[0].email;
+        if(p){
+            console.log(2);
+        }
+    }
+    catch(err){
+        console.log(1);
+    }
+}
+out(); */
+
+
+// The data is an array. This is always an array, thus it must be treated like an array of the data entries of the MongoDB
+// database. So a for loop is used or data[0] is written.
+
+
+
+
+
+// async function out(){
+//     const data = await Collection1.find({});
+//     for(let i = 0; i < data.length; i++){
+//         console.log(data[i].email);
+//     }
+// }
+// out();
+
+// async function printDataToConsole() {
+//     try {
+//         const data = await Collection1.find();
+//         // data.forEach(document => {
+//         //     console.log(document.name);
+//         // });
+//         console.log(data);
+//         console.log("Data printed to console.");
+//     } catch (err) {
+//         console.error("Failed to fetch and print data.");
+//         console.error(err);
+//     }
+// }
+
+// // Call the function when needed
+// printDataToConsole();
+
+async function add(){
+    const addition = await mongoose.model("collection_1").insertMany({name: "Anirban Mukherjee", year: 2022});
+} 
+add();
+
+async function del(){
+    const dele = await mongoose.model("collection_1").deleteOne({year: 2022});
+    console.log(dele.deletedCount);
+}
+del();
+
+
+
+
+
+app.post("/backend1.js", (req,res)=>{
+    async function del(){
+        const data = prompt("Enter your email address");
+        const dele = await mongoose.model("collection_1").deleteOne({email: data});
+        if(dele.deletedCount == 0){
+            res.send("You have not yet registered. Please register.");
+        }
+        else{
+            res.send("Your account have been successfully deleted");
+        }
+    }
+    del();
+});
+
+app.post("/backend1.js", async (req, res) => {
+    const email = req.body.email;
+    const confirmation = req.body.confirmation;
+  
+    if (confirmation == 'on') {
+      try {
+        const result = await mongoose.model("collection_1").deleteOne({ email: email });
+        if (result.deletedCount == 0) {
+          res.send("You have not registered.");
+        } 
+        else {
+          res.send("Your registration has been deleted.");
+        }
+      } catch (err) {
+        console.error(err);
+        res.status(500).send("An error occurred while deleting your account.");
+      }
+    } else {
+      res.send("Please confirm by checking the box.");
+    }
+  });
